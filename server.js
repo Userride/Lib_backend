@@ -15,14 +15,7 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Middleware
-app.use(cors({
-  origin: [
-    "http://localhost:3000",               // local frontend
-    "https://lib-frontend-umber.vercel.app/"     // deployed frontend
-  ],
-  methods: "GET,POST,PUT,DELETE",
-  credentials: true
-}));
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -47,4 +40,4 @@ app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
 
-module.exports = app;
+module.exports = app; 
